@@ -1,67 +1,44 @@
 # Creo Work Index
 
-A visual work library for **Creo Parametric 12 and 13 on Windows x64**: save useful model states, find recent work by its preview, and keep project folders within easy reach.
+A visual library for recent Creo Parametric work on **Windows x64 with Creo 12 or 13**. It began as my attempt to recover work after Creo crashes and grew into model cards, saved versions, drawings, project folders and optional autosave. It helps me find and resume a job; it cannot prevent a Creo crash.
 
 [中文说明](README.zh-CN.md)
 
-## Why I built it
-
-I started with Creo trail-file recovery because losing work after a crash was frustrating. Over several months of everyday use, the tool grew into a work index: model cards, saved versions, drawings, optional autosave and project folders. It helps keep useful recovery points; it does not prevent Creo from crashing.
-
 ## Download
 
-- [Chinese Windows package](CreoWorkIndex_V491_Chinese.zip?raw=true)
-- [English Windows package](CreoWorkIndex_V491_English.zip?raw=true)
+- [Chinese V496 installer](CreoWorkIndex_V496_Preview_Chinese.zip?raw=true) · [SHA-256](CreoWorkIndex_V496_Preview_Chinese.zip.sha256)
+- [English V496 installer](CreoWorkIndex_V496_Preview_English.zip?raw=true) · [SHA-256](CreoWorkIndex_V496_Preview_English.zip.sha256)
 
-Both are complete installation packages with identical features. Their first-run language differs; an existing saved language choice takes precedence. You can switch between Chinese and English in Work Index, Recovery Center or the launcher's Language menu. Native Creo diagnostics may retain their original language.
+Both packages have the same functions. Their first-run language differs; a saved language preference takes precedence. The earlier V491 packages remain in the file history but are not the current download. This repository distributes installers and usage notes, not source code.
 
-This repository distributes the installer, screenshots and documentation. It is not a source-code release.
+## Install or upgrade
 
-## Install and try it
+Extract the ZIP and run **Setup.exe**. For a new installation, select separate empty program and index-library folders on a local drive, then select the detected Creo 12 or 13 installation and startup configuration. Choose the library location carefully: saved nodes and imported project materials are managed there.
 
-1. Extract the package and run **Setup.exe**.
-2. Choose separate, empty plugin and work-index folders on an available local drive. Pick the permanent index location carefully: subsequent snapshots and imported project materials are managed there.
-3. Select the detected **Creo 12 or 13** installation and your usual startup `config.pro`. Browse to `parametric.exe` and the config manually if needed.
-4. Install, save your current Creo work, and restart Creo normally.
-5. Open a test part, arrange its view and look for the floating **CREO** launcher. Choose **Save state**, open Work Index and find its card. Use **Open in Creo** to return to a saved version.
+To update an existing installation, choose **Upgrade existing version**. The installer detects the old program, keeps its library and settings, switches the registered DLL, and backs up the previous program files. A failed update rolls back; an interrupted update can be recovered. Save your work and exit Creo and the index interface before installing, then restart Creo.
 
-The installer is for a fresh installation and refuses nonempty plugin/library folders. Keep existing installations and populated libraries intact; do not delete an old library to satisfy this requirement.
+![Installer interface](setup-English.png)
 
-![English installer](setup-English.png)
+## First use
 
-## Prefer deliberate saves
+Open a test part in Creo, arrange its view, click the floating **CREO** launcher, then choose **Save state**. Open Work Index to find its card and preview. **Open in Creo** opens a working copy of a saved version. If a same-named model or assembly component remains in Creo memory, the restore stops and explains the conflict; closing a window alone may not remove that model from memory.
 
-Use **Save state** at useful milestones. Manual quick saves appear as selectable card versions. Drawings can also be saved and linked to their model cards.
+I prefer a deliberate **Save state** at useful milestones. It normally saves the working file, then copies the saved native files into an independent history node. Automatic versions rotate between A and B; a failed replacement keeps the previous nodes. The saved versions are separate from working originals.
 
-Optional autosave defaults to **5 effective design changes**. The system accumulates design-change batches, not clicks. Leaving Creo idle does not increase this counter. Timed saving is also available; a due save waits for changes and safe idle conditions.
+When I save an individual part that belongs to a loaded assembly, the floating prompt offers **Save assembly node** or **Skip**. Choosing it stores a complete assembly node, including identified native components. It does not automatically create a card for every child part. The prompt stays bound to the named assembly even if another model becomes active.
 
-Large assemblies, point clouds and STL work can pause while saving. Increase the interval or pause autosave and save manually if this interrupts modeling.
+## Autosave for each file
 
-Automatic snapshots rotate between **A/B slots**. Manual quick saves are separate. **Clean quick saves** keeps the latest quick save and permanently removes the specifically listed older local backups; busy-file cleanup can be queued and canceled. Named manual versions, A/B slots and working originals are excluded from that cleanup.
+A new file first asks only whether to enable protection. Its default is **one save after five effective design changes**. Native change counts are not mouse clicks; an idle model does not accumulate changes. Click **Autosave settings** again to see the current file name and set change-count or time mode and its interval. Other files keep their own settings and continue independently. The same panel can pause or resume that file; successful actions close it. Switching files closes the old file’s panel.
 
-## A small progress indicator
+The launcher shows only `2/5` beside the icon in change mode or `01:20/05:00` below it in time mode. Reaching the interval is not proof of a successful save. If a timed check finds no design change, it reports that no save is needed. Large assemblies, point clouds and STL work can stall while being saved; use a longer interval or deliberate saves when that affects modeling.
 
-The CREO launcher keeps its original size. With autosave enabled:
+![Per-file autosave settings, illustrative model name](v496-autosave-settings-English.png)
 
-- Change mode: only `2/5` beside the icon.
-- Timed mode: only `01:20/05:00` below the icon.
+## Projects and scope
 
-Progress comes from the plugin's current counter/timer. Reaching the threshold is not confirmation that a save succeeded. The indicator hides when autosave is off.
+I group the whole project material folder with its project card. Next time I open Creo and Work Index, recent cards show what I have been working on; the project-folder shortcut gets me back to its files. Model cards can also hold drawings.
 
-![Approved progress layout — illustrative values](floating-approved-right-count-bottom-time-20261022.png)
+The V496 workflow was checked locally in Creo 13 with a simple assembly and two parts: native save/copy, assembly prompt after part save, restore conflict handling, A/B replacement failure, and two different file schedules. Complex skeletons, family tables, external references, simplified representations and Windchill-managed models were outside that run. Try the first-use flow on a test project on your computer.
 
-Recovery Center has **Ask whether to enable autosave when opening a new model**. It is on by default, asks only for models without a saved protection choice and avoids repeatedly asking about the same model in one session. Turning the question off does not disable existing autosave settings.
-
-## Find work without hunting through folders
-
-Open Creo, then Work Index to see recent work. Organize model cards by project, import entire materials folders, and use **Project folder** to return to them. Folder import copies and verifies files while retaining the originals. Use the imported location for subsequent work.
-
-![Work Index interface — test card](work-index-English.png)
-
-The internal AI comparison/optimization button is not included in the public model-card interface.
-
-## Validation and feedback
-
-The UI update is checked with isolated fixtures for language switching, saved preferences, counters, prompt choices, filtering, drawings, STP attachments and quick-save cleanup. Native save/restore behavior uses the supplied V508 plugin; test the first-use workflow on each target computer before production use.
-
-Ideas from everyday use are welcome. **Email: zewei2580@gmail.com**
+Feedback: **[zewei2580@gmail.com](mailto:zewei2580@gmail.com)**.
