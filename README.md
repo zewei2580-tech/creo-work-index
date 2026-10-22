@@ -6,8 +6,8 @@ A visual library for recent Creo Parametric work on **Windows x64 with Creo 12 o
 
 ## Download
 
-- [Chinese V496 installer](CreoWorkIndex_V496_Preview_Chinese.zip?raw=true) · [SHA-256](CreoWorkIndex_V496_Preview_Chinese.zip.sha256)
-- [English V496 installer](CreoWorkIndex_V496_Preview_English.zip?raw=true) · [SHA-256](CreoWorkIndex_V496_Preview_English.zip.sha256)
+- [Chinese V497 installer](CreoWorkIndex_V497_Preview_Chinese.zip?raw=true) · [SHA-256](CreoWorkIndex_V497_Preview_Chinese.zip.sha256)
+- [English V497 installer](CreoWorkIndex_V497_Preview_English.zip?raw=true) · [SHA-256](CreoWorkIndex_V497_Preview_English.zip.sha256)
 
 Both packages have the same functions. Their first-run language differs; a saved language preference takes precedence. The earlier V491 packages remain in the file history but are not the current download. This repository distributes installers and usage notes, not source code.
 
@@ -29,7 +29,7 @@ When I save an individual part that belongs to a loaded assembly, the floating p
 
 ## Autosave for each file
 
-A new file first asks only whether to enable protection. Its default is **one save after five effective design changes**. Native change counts are not mouse clicks; an idle model does not accumulate changes. Click **Autosave settings** again to see the current file name and set change-count or time mode and its interval. Other files keep their own settings and continue independently. The same panel can pause or resume that file; successful actions close it. Switching files closes the old file’s panel.
+A new file first asks only whether to enable protection. If left unanswered, the prompt closes after about 12 seconds and does not keep reappearing for that file during the same session. Its default is **one save after five effective design changes**. Native change counts are not mouse clicks; an idle model does not accumulate changes. Click **Autosave settings** again to see the current file name and set change-count or time mode and its interval. Other files keep their own settings and continue independently. The same panel can pause or resume that file; successful actions close it. Switching files closes the old file’s panel.
 
 The launcher shows only `2/5` beside the icon in change mode or `01:20/05:00` below it in time mode. Reaching the interval is not proof of a successful save. If a timed check finds no design change, it reports that no save is needed. Large assemblies, point clouds and STL work can stall while being saved; use a longer interval or deliberate saves when that affects modeling.
 
@@ -39,6 +39,6 @@ The launcher shows only `2/5` beside the icon in change mode or `01:20/05:00` be
 
 I group the whole project material folder with its project card. Next time I open Creo and Work Index, recent cards show what I have been working on; the project-folder shortcut gets me back to its files. Model cards can also hold drawings.
 
-The V496 workflow was checked locally in Creo 13 with a simple assembly and two parts: native save/copy, assembly prompt after part save, restore conflict handling, A/B replacement failure, and two different file schedules. Complex skeletons, family tables, external references, simplified representations and Windchill-managed models were outside that run. Try the first-use flow on a test project on your computer.
+The V497 workflow was checked locally in Creo 13 with a simple assembly and two parts: native save/copy, assembly prompt after part save, restore conflict handling, A/B replacement failure, and two different file schedules. Complex skeletons, family tables, external references, simplified representations and Windchill-managed models were outside that run. Try the first-use flow on a test project on your computer.
 
 Feedback: **[zewei2580@gmail.com](mailto:zewei2580@gmail.com)**.
