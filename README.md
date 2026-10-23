@@ -1,5 +1,7 @@
 # Creo Work Index
 
+<img src="app-icon.png" width="240" alt="CREO AI" />
+
 A visual library for recent Creo Parametric work on **Windows x64 with Creo 12 or 13**. It began as my attempt to recover work after Creo crashes and grew into model cards, saved versions, drawings, project folders and optional autosave. It helps me find and resume a job; it cannot prevent a Creo crash.
 
 [中文说明](README.zh-CN.md)
@@ -7,9 +9,8 @@ A visual library for recent Creo Parametric work on **Windows x64 with Creo 12 o
 ## Download
 
 - [Chinese V499 installer](CreoWorkIndex_V499_Preview_Chinese.zip?raw=true) · [SHA-256](CreoWorkIndex_V499_Preview_Chinese.zip.sha256)
-- [English V499 installer](CreoWorkIndex_V499_Preview_English.zip?raw=true) · [SHA-256](CreoWorkIndex_V499_Preview_English.zip.sha256)
 
-Both packages have the same functions. Their first-run language differs; a saved language preference takes precedence. The earlier V491 packages remain in the file history but are not the current download. This repository distributes installers and usage notes, not source code.
+This release publishes Chinese installers only. English builds are kept locally. The earlier V491 packages remain in the file history but are not the current download. This repository distributes installers and usage notes, not source code.
 
 ## Install or upgrade
 
@@ -48,3 +49,9 @@ New dimensional CREO / AI icon; foreground-Creo floating entry; obsolete Ribbon 
 
 ## Uninstall
 Exit Creo and the protection UI. Extract the complete package and run Uninstall.exe beside uninstall-files.txt. Select the plugin installation folder. The library is kept by default. Only check the permanent library deletion option if you intend to delete all indexed history. Shared VC++ runtimes are retained.
+
+## Additional compatibility packages
+Creo 11 SDK and Creo 8 SDK compatibility-test builds retain their respective native DLLs and include the new icon and Uninstall.exe. These are separate compatibility builds, not additional live Creo acceptance results.
+
+- [Creo 11 Chinese](CreoWorkIndex_Creo11SDK_11to13_Test_V499_Chinese.zip?raw=true)
+- [Creo 8 Chinese](CreoWorkIndex_Creo8SDK_8to13_Test_V499_Chinese.zip?raw=true)

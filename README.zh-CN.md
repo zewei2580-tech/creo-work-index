@@ -1,5 +1,7 @@
 # Creo 工作文件索引库
 
+<img src="app-icon.png" width="240" alt="CREO AI" />
+
 适用于 **Windows 64 位、Creo 12 / 13**。最初我想解决 Creo 崩溃后返工的问题，从轨迹恢复做起，几个月里逐渐做成模型卡片、保存节点、工程图、项目资料和自动保存。它不能防止 Creo 崩溃，但能帮我找到近期工作并返回之前留存的状态。
 
 [English](README.md)
@@ -7,9 +9,8 @@
 ## 下载
 
 - [V499 中文版完整安装包](CreoWorkIndex_V499_Preview_Chinese.zip?raw=true) · [SHA-256 校验](CreoWorkIndex_V499_Preview_Chinese.zip.sha256)
-- [V499 英文版完整安装包](CreoWorkIndex_V499_Preview_English.zip?raw=true) · [SHA-256 校验](CreoWorkIndex_V499_Preview_English.zip.sha256)
 
-两个包功能相同，首次启动的默认语言不同；已保存的语言选择优先保留。仓库里较早的 V491 包属于旧版。本仓库提供安装包和说明，暂不发布源码。
+本次仅发布中文版安装包，英文构建保留在本地。仓库里较早的 V491 包属于旧版。本仓库提供安装包和说明，暂不发布源码。
 
 ## 安装或覆盖升级
 
@@ -48,3 +49,9 @@
 
 ## 卸载
 退出 Creo 和保护界面，完整解压安装包，运行与 uninstall-files.txt 同目录的 Uninstall.exe，选择插件安装目录。默认保留索引库；只有需要永久删除全部索引历史时才勾选删除数据。共用的 VC++ 运行库保留。
+
+## 其他兼容测试包
+Creo 11 与 Creo 8 修正版保留各自的原生兼容 DLL，新增图标和卸载工具。本次通过卸载隔离测试，未重新进行 Creo 实机验收。
+
+- [Creo 11 Chinese](CreoWorkIndex_Creo11SDK_11to13_Test_V499_Chinese.zip?raw=true)
+- [Creo 8 Chinese](CreoWorkIndex_Creo8SDK_8to13_Test_V499_Chinese.zip?raw=true)
