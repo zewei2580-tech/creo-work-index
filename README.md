@@ -6,8 +6,8 @@ A visual library for recent Creo Parametric work on **Windows x64 with Creo 12 o
 
 ## Download
 
-- [Chinese V497 installer](CreoWorkIndex_V497_Preview_Chinese.zip?raw=true) · [SHA-256](CreoWorkIndex_V497_Preview_Chinese.zip.sha256)
-- [English V497 installer](CreoWorkIndex_V497_Preview_English.zip?raw=true) · [SHA-256](CreoWorkIndex_V497_Preview_English.zip.sha256)
+- [Chinese V499 installer](CreoWorkIndex_V499_Preview_Chinese.zip?raw=true) · [SHA-256](CreoWorkIndex_V499_Preview_Chinese.zip.sha256)
+- [English V499 installer](CreoWorkIndex_V499_Preview_English.zip?raw=true) · [SHA-256](CreoWorkIndex_V499_Preview_English.zip.sha256)
 
 Both packages have the same functions. Their first-run language differs; a saved language preference takes precedence. The earlier V491 packages remain in the file history but are not the current download. This repository distributes installers and usage notes, not source code.
 
@@ -39,6 +39,12 @@ The launcher shows only `2/5` beside the icon in change mode or `01:20/05:00` be
 
 I group the whole project material folder with its project card. Next time I open Creo and Work Index, recent cards show what I have been working on; the project-folder shortcut gets me back to its files. Model cards can also hold drawings.
 
-The V497 workflow was checked locally in Creo 13 with a simple assembly and two parts: native save/copy, assembly prompt after part save, restore conflict handling, A/B replacement failure, and two different file schedules. Complex skeletons, family tables, external references, simplified representations and Windchill-managed models were outside that run. Try the first-use flow on a test project on your computer.
+The earlier V496 workflow was checked locally in Creo 13 with a simple assembly and two parts: native save/copy, assembly prompt after part save, restore conflict handling, A/B replacement failure, and two different file schedules. Complex skeletons, family tables, external references, simplified representations and Windchill-managed models were outside that run. Try the first-use flow on a test project on your computer.
 
 Feedback: **[zewei2580@gmail.com](mailto:zewei2580@gmail.com)**.
+
+## V499 update
+New dimensional CREO / AI icon; foreground-Creo floating entry; obsolete Ribbon resources removed during upgrade. Multi-Creo behavior still needs live validation.
+
+## Uninstall
+Exit Creo and the protection UI. Extract the complete package and run Uninstall.exe beside uninstall-files.txt. Select the plugin installation folder. The library is kept by default. Only check the permanent library deletion option if you intend to delete all indexed history. Shared VC++ runtimes are retained.

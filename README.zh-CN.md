@@ -6,8 +6,8 @@
 
 ## 下载
 
-- [V497 中文版完整安装包](CreoWorkIndex_V497_Preview_Chinese.zip?raw=true) · [SHA-256 校验](CreoWorkIndex_V497_Preview_Chinese.zip.sha256)
-- [V497 英文版完整安装包](CreoWorkIndex_V497_Preview_English.zip?raw=true) · [SHA-256 校验](CreoWorkIndex_V497_Preview_English.zip.sha256)
+- [V499 中文版完整安装包](CreoWorkIndex_V499_Preview_Chinese.zip?raw=true) · [SHA-256 校验](CreoWorkIndex_V499_Preview_Chinese.zip.sha256)
+- [V499 英文版完整安装包](CreoWorkIndex_V499_Preview_English.zip?raw=true) · [SHA-256 校验](CreoWorkIndex_V499_Preview_English.zip.sha256)
 
 两个包功能相同，首次启动的默认语言不同；已保存的语言选择优先保留。仓库里较早的 V491 包属于旧版。本仓库提供安装包和说明，暂不发布源码。
 
@@ -39,6 +39,12 @@
 
 我把整个项目资料文件夹归入对应项目。下次打开 Creo 和索引库，就能看近期卡片，再从项目文件夹入口找到资料，不用一层层翻文件夹。模型卡片也可以关联 Creo 工程图。
 
-V497 已用 Creo 13 的简单装配和两个测试零件验证原生保存与复制、零件后补存装配、同名依赖恢复拦截、A/B 失败保留，以及两个文件使用不同保存方式。族表、骨架、复杂外部参照、简化表示和 Windchill 管理模型不在这轮实测范围内。建议先用自己的测试项目完成一次保存与恢复。
+此前 V496 已用 Creo 13 的简单装配和两个测试零件验证原生保存与复制、零件后补存装配、同名依赖恢复拦截、A/B 失败保留，以及两个文件使用不同保存方式。族表、骨架、复杂外部参照、简化表示和 Windchill 管理模型不在这轮实测范围内。建议先用自己的测试项目完成一次保存与恢复。
 
 交流邮箱：[zewei2580@gmail.com](mailto:zewei2580@gmail.com)。
+
+## V499 更新
+更换立体 CREO / AI 图标；悬浮入口跟随当前 Creo；升级清理遗留 Ribbon 资源。双 Creo 显示仍需实机验证。
+
+## 卸载
+退出 Creo 和保护界面，完整解压安装包，运行与 uninstall-files.txt 同目录的 Uninstall.exe，选择插件安装目录。默认保留索引库；只有需要永久删除全部索引历史时才勾选删除数据。共用的 VC++ 运行库保留。
