@@ -20,9 +20,12 @@ Model cards, saved nodes, per-file autosave and error protection for Windows x64
 
 [中文说明](README.zh-CN.md) · [Full V578 user guide (Chinese)](docs/USER_GUIDE.zh-CN.md)
 
+
+完整图文功能手册提供 [PDF 下载（48 页）](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_V578_Manual.pdf) 和 [离线网页版下载](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_V578_Manual.html)。推荐安装包已内置两种格式，完整解压后在 Setup.exe 同目录打开“索引库功能手册.pdf”或“索引库功能手册.html”。PDF 带目录、书签和配图；网页版支持全文搜索及图片放大。
+
 ## Download and install
 
-[V578 unified Chinese installer](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese.zip) · [SHA-256](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese.zip.sha256) · [Release notes](https://github.com/zewei2580-tech/creo-work-index/releases/tag/v578)
+[V578 unified Chinese installer](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese_With_Manual_PDF.zip) · [SHA-256](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese_With_Manual_PDF.zip.sha256) · [Release notes](https://github.com/zewei2580-tech/creo-work-index/releases/tag/v578)
 
 Extract the complete archive, keep the shared and versions folders, and run the outer Setup.exe. Select your actual Creo version and startup configuration. New installations use separate empty program and library directories; existing installations use Upgrade and retain their settings. Save your work and exit Creo and the index interface first.
 
