@@ -1,54 +1,46 @@
-# Creo Work Index
+# Creo Work Index · V574
 
-<img src="app-icon.png" width="240" alt="CREO AI" />
+<img src="app-icon.png" width="160" alt="CREO AI" />
 
-A visual library for recent Creo Parametric work on **Windows x64 with version-specific components for Creo 5–13**. It began as my attempt to recover work after Creo crashes and grew into model cards, saved versions, drawings, project folders and optional autosave. It helps me find and resume a job; it cannot prevent a Creo crash.
+Model cards, saved nodes, per-file autosave and error protection for Windows x64. The unified installer contains **version-specific components for Creo 5–13**. It cannot prevent Creo crashes or guarantee recovery of every unsaved operation.
 
-[中文说明](README.zh-CN.md)
+[中文说明](README.zh-CN.md) · [Full V574 user guide (Chinese)](docs/USER_GUIDE.zh-CN.md)
 
-## Download
+## Download and install
 
-- [V574 Chinese unified installer](https://github.com/zewei2580-tech/creo-work-index/releases/download/v574/CreoWorkIndex_Unified_V574_Chinese.zip) · [SHA-256](https://github.com/zewei2580-tech/creo-work-index/releases/download/v574/CreoWorkIndex_Unified_V574_Chinese.zip.sha256)
+[V574 unified Chinese installer](https://github.com/zewei2580-tech/creo-work-index/releases/download/v574/CreoWorkIndex_Unified_V574_Chinese.zip) · [SHA-256](https://github.com/zewei2580-tech/creo-work-index/releases/download/v574/CreoWorkIndex_Unified_V574_Chinese.zip.sha256) · [Release notes](https://github.com/zewei2580-tech/creo-work-index/releases/tag/v574)
 
-Contains nine SDK-specific builds for Creo 5–13. Build and installation checks passed; complete live CAD acceptance has not been performed on every version. Old installer files have been removed from the current branch; Git history remains available. This repository distributes installers and usage notes, not software source code.
+Extract the complete archive, keep the shared and versions folders, and run the outer Setup.exe. Select your actual Creo version and startup configuration. New installations use separate empty program and library directories; existing installations use Upgrade and retain their settings. Save your work and exit Creo and the index interface first.
 
-## Install or upgrade
+All nine SDK builds and installation checks passed. Full live CAD acceptance has **not** been completed on every Creo version. Test with copies before production use. This repository distributes installers and documentation, not software source code.
 
-Extract the ZIP and run **Setup.exe**. For a new installation, select separate empty program and index-library folders on a local drive, then select the detected Creo 5–13 installation and startup configuration. Choose the library location carefully: saved nodes and imported project materials are managed there.
+## Current model cards
 
-To update an existing installation, choose **Upgrade existing version**. The installer detects the old program, keeps its library and settings, switches the registered DLL, and backs up the previous program files. A failed update rolls back; an interrupted update can be recovered. Save your work and exit Creo and the index interface before installing, then restart Creo.
+![V574 sample card](docs/images/v574-card.png)
+![V574 embedded node list](docs/images/v574-nodes.png)
 
-![Installer interface](setup-English.png)
+These are actual V574 UI renders using isolated demonstration data. A fresh empty library receives one SP115050 sample node; the four nodes above illustrate selection. Existing libraries are not populated on upgrade, and deleting the sample does not cause it to return. The sample retains its original Creo 3.0 file; its embedded thumbnail has limited resolution.
 
-## First use
+Selecting a node changes the preview only. Double-click the preview or use **CREO打开** to open a separate working copy. **本地文件** opens Windows Explorer at the node file; internal metadata remains visible and must not be removed manually.
 
-Open a test part in Creo, arrange its view, click the floating **CREO** launcher, then choose **Save state**. Open Work Index to find its card and preview. **Open in Creo** opens a working copy of a saved version. If a same-named model or assembly component remains in Creo memory, the restore stops and explains the conflict; closing a window alone may not remove that model from memory.
+V574 embeds the list in the card to reduce unexpected closing during transient focus changes. It supports scrolling, selection and row deletion. **改名** updates the node label. Row **×** moves eligible manual nodes to the recycle bin; automatic, locked, in-use and recovery-dependent nodes are protected. The recycle bin supports selecting a card, restoring it or permanently clearing it.
 
-I prefer a deliberate **Save state** at useful milestones. It normally saves the working file, then copies the saved native files into an independent history node. Automatic versions rotate between A and B; a failed replacement keeps the previous nodes. The saved versions are separate from working originals.
+The card-level **删除** action has a broader scope and may permanently delete the entire local backup record without the recycle bin. Read the confirmation carefully.
 
-When I save an individual part that belongs to a loaded assembly, the floating prompt offers **Save assembly node** or **Skip**. Choosing it stores a complete assembly node, including identified native components. It does not automatically create a card for every child part. The prompt stays bound to the named assembly even if another model becomes active.
+## Autosave and error protection
 
-## Autosave for each file
+![V574 per-file autosave settings — Chinese interface](docs/images/v574-autosave.png)
 
-A new file first asks only whether to enable protection. If left unanswered, the prompt closes after about 12 seconds and does not keep reappearing for that file during the same session. Its default is **time mode, checking every 5 minutes; the preset values are 20 changes and 60 seconds idle**. Native change counts are not mouse clicks; an idle model does not accumulate changes. Click **Autosave settings** again to see the current file name and set change-count or time mode and its interval. Other files keep their own settings and continue independently. The same panel can pause or resume that file; successful actions close it. Switching files closes the old file’s panel.
+Choose one mode: effective changes (preset 20), timed checks (default 5 minutes), or idle after modification (preset 60 seconds). Existing settings survive upgrades. Counts are design changes, not clicks; reaching a threshold still requires Creo to allow a safe save. Automatic versions rotate between A/B.
 
-The launcher shows only `2/5` beside the icon in change mode or `01:20/05:00` below it in time mode. Reaching the interval is not proof of a successful save. If a timed check finds no design change, it reports that no save is needed. Large assemblies, point clouds and STL work can stall while being saved; use a longer interval or deliberate saves when that affects modeling.
+Autosave and ordinary features are free. Error protection has a 30-day trial followed by offline activation; it is a separate VIP switch. It creates or reuses pre-operation snapshots only for supported contexts, with identity and completeness checks. Existing matching snapshots remain recoverable after trial expiry.
 
-![Per-file autosave settings, illustrative model name](v496-autosave-settings-English.png)
+After about 20 seconds without idle feedback during a protected operation, the user may continue waiting or explicitly end that session and restore in a new one. Long computation is not necessarily failure. Ending a session can lose unsaved changes in other unprotected models. Verify the resulting model tree and geometry.
 
-## Projects and scope
+## Projects, updates and help
 
-I group the whole project material folder with its project card. Next time I open Creo and Work Index, recent cards show what I have been working on; the project-folder shortcut gets me back to its files. Model cards can also hold drawings.
+The [user guide](docs/USER_GUIDE.zh-CN.md) covers projects, backup and migration, independent copies, drawings, STP, cleanup, licensing and uninstalling. Complex assemblies and external references require their own validation.
 
-The earlier V496 workflow was checked locally in Creo 13 with a simple assembly and two parts: native save/copy, assembly prompt after part save, restore conflict handling, A/B replacement failure, and two different file schedules. Complex skeletons, family tables, external references, simplified representations and Windchill-managed models were outside that run. Try the first-use flow on a test project on your computer.
+Use the outer Setup.exe for updates, rollback and uninstall. The library is retained by default. This repository's older installer files have been removed from the current branch, while Git history remains.
 
-Feedback: **[zewei2580@gmail.com](mailto:zewei2580@gmail.com)**.
-
-## V574 update
-Node selection now uses an embedded list to reduce unexpected closing on transient focus changes. Fresh empty libraries include the SP115050 tutorial sample. Existing libraries remain unchanged on upgrade. Error protection offers a 30-day trial and offline activation; autosave and other functions remain free.
-
-## Uninstall
-Exit Creo and the protection UI. Extract the complete package and run Uninstall.exe beside uninstall-files.txt. Select the plugin installation folder. The library is kept by default. Only check the permanent library deletion option if you intend to delete all indexed history. Shared VC++ runtimes are retained.
-
-## Compatibility
-Use the unified package above. Separate old SDK test installers are no longer the current download.
+WeChat: **zewei2580** · Email: [992823232@qq.com](mailto:992823232@qq.com)
