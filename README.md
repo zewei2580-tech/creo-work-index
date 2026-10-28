@@ -2,19 +2,19 @@
 
 <img src="app-icon.png" width="240" alt="CREO AI" />
 
-A visual library for recent Creo Parametric work on **Windows x64 with Creo 12 or 13**. It began as my attempt to recover work after Creo crashes and grew into model cards, saved versions, drawings, project folders and optional autosave. It helps me find and resume a job; it cannot prevent a Creo crash.
+A visual library for recent Creo Parametric work on **Windows x64 with version-specific components for Creo 5–13**. It began as my attempt to recover work after Creo crashes and grew into model cards, saved versions, drawings, project folders and optional autosave. It helps me find and resume a job; it cannot prevent a Creo crash.
 
 [中文说明](README.zh-CN.md)
 
 ## Download
 
-- [Chinese V499 installer](CreoWorkIndex_V499_Preview_Chinese.zip?raw=true) · [SHA-256](CreoWorkIndex_V499_Preview_Chinese.zip.sha256)
+- [V574 Chinese unified installer](https://github.com/zewei2580-tech/creo-work-index/releases/download/v574/CreoWorkIndex_Unified_V574_Chinese.zip) · [SHA-256](https://github.com/zewei2580-tech/creo-work-index/releases/download/v574/CreoWorkIndex_Unified_V574_Chinese.zip.sha256)
 
-This release publishes Chinese installers only. English builds are kept locally. The earlier V491 packages remain in the file history but are not the current download. This repository distributes installers and usage notes, not source code.
+Contains nine SDK-specific builds for Creo 5–13. Build and installation checks passed; complete live CAD acceptance has not been performed on every version. Old installer files have been removed from the current branch; Git history remains available. This repository distributes installers and usage notes, not software source code.
 
 ## Install or upgrade
 
-Extract the ZIP and run **Setup.exe**. For a new installation, select separate empty program and index-library folders on a local drive, then select the detected Creo 12 or 13 installation and startup configuration. Choose the library location carefully: saved nodes and imported project materials are managed there.
+Extract the ZIP and run **Setup.exe**. For a new installation, select separate empty program and index-library folders on a local drive, then select the detected Creo 5–13 installation and startup configuration. Choose the library location carefully: saved nodes and imported project materials are managed there.
 
 To update an existing installation, choose **Upgrade existing version**. The installer detects the old program, keeps its library and settings, switches the registered DLL, and backs up the previous program files. A failed update rolls back; an interrupted update can be recovered. Save your work and exit Creo and the index interface before installing, then restart Creo.
 
@@ -30,7 +30,7 @@ When I save an individual part that belongs to a loaded assembly, the floating p
 
 ## Autosave for each file
 
-A new file first asks only whether to enable protection. If left unanswered, the prompt closes after about 12 seconds and does not keep reappearing for that file during the same session. Its default is **one save after five effective design changes**. Native change counts are not mouse clicks; an idle model does not accumulate changes. Click **Autosave settings** again to see the current file name and set change-count or time mode and its interval. Other files keep their own settings and continue independently. The same panel can pause or resume that file; successful actions close it. Switching files closes the old file’s panel.
+A new file first asks only whether to enable protection. If left unanswered, the prompt closes after about 12 seconds and does not keep reappearing for that file during the same session. Its default is **time mode, checking every 5 minutes; the preset values are 20 changes and 60 seconds idle**. Native change counts are not mouse clicks; an idle model does not accumulate changes. Click **Autosave settings** again to see the current file name and set change-count or time mode and its interval. Other files keep their own settings and continue independently. The same panel can pause or resume that file; successful actions close it. Switching files closes the old file’s panel.
 
 The launcher shows only `2/5` beside the icon in change mode or `01:20/05:00` below it in time mode. Reaching the interval is not proof of a successful save. If a timed check finds no design change, it reports that no save is needed. Large assemblies, point clouds and STL work can stall while being saved; use a longer interval or deliberate saves when that affects modeling.
 
@@ -44,14 +44,11 @@ The earlier V496 workflow was checked locally in Creo 13 with a simple assembly 
 
 Feedback: **[zewei2580@gmail.com](mailto:zewei2580@gmail.com)**.
 
-## V499 update
-New dimensional CREO / AI icon; foreground-Creo floating entry; obsolete Ribbon resources removed during upgrade. Multi-Creo behavior still needs live validation.
+## V574 update
+Node selection now uses an embedded list to reduce unexpected closing on transient focus changes. Fresh empty libraries include the SP115050 tutorial sample. Existing libraries remain unchanged on upgrade. Error protection offers a 30-day trial and offline activation; autosave and other functions remain free.
 
 ## Uninstall
 Exit Creo and the protection UI. Extract the complete package and run Uninstall.exe beside uninstall-files.txt. Select the plugin installation folder. The library is kept by default. Only check the permanent library deletion option if you intend to delete all indexed history. Shared VC++ runtimes are retained.
 
-## Additional compatibility packages
-Creo 11 SDK and Creo 8 SDK compatibility-test builds retain their respective native DLLs and include the new icon and Uninstall.exe. These are separate compatibility builds, not additional live Creo acceptance results.
-
-- [Creo 11 Chinese](CreoWorkIndex_Creo11SDK_11to13_Test_V499_Chinese.zip?raw=true)
-- [Creo 8 Chinese](CreoWorkIndex_Creo8SDK_8to13_Test_V499_Chinese.zip?raw=true)
+## Compatibility
+Use the unified package above. Separate old SDK test installers are no longer the current download.
