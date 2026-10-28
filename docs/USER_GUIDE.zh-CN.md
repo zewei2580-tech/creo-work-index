@@ -1,8 +1,12 @@
 # V578 功能手册
 
-[返回首页](../README.zh-CN.md) · [下载 V578](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese.zip)
+[返回首页](../README.zh-CN.md) · [下载 V578](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese_With_Manual_PDF.zip)
 
 本手册对应 V578。图片沿用 V574 界面代码在隔离环境中的真实渲染；其中模型状态、节点名称及时间为演示值，不是用户工作会话。
+
+
+
+完整图文功能手册提供 [PDF 下载（48 页）](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_V578_Manual.pdf) 和 [离线网页版下载](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_V578_Manual.html)。推荐安装包已内置两种格式，完整解压后在 Setup.exe 同目录打开“索引库功能手册.pdf”或“索引库功能手册.html”。PDF 带目录、书签和配图；网页版支持全文搜索及图片放大。
 
 ## 1. 安装和第一次体验
 
