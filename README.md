@@ -2,6 +2,20 @@
 
 <img src="app-icon.png" width="160" alt="CREO AI" />
 
+用 Creo 做设计，最怕的有时候不是模型复杂，而是**改了一步之后，前面做的东西突然出错了**。
+
+这些情况，我在工作中都遇到过：
+
+- 修改一个特征，关联关系发生冲突，**模型树一片红**；
+- 双击编辑模型中的某个特征，触发重新生成，结果模型出错；
+- 移除或替换某个特征后，Creo 一直在计算，等了很久也无法中断。
+
+有时候，出错前的工作还没来得及保存。看着模型卡在那里，最想知道的就是：
+
+**刚才做的设计，还有没有机会找回来？**
+
+所以我想做这个插件：在这些容易出错的操作前，尽量给模型留一份状态。遇到问题时，看看能不能把之前的工作挽回。
+
 Model cards, saved nodes, per-file autosave and error protection for Windows x64. The unified installer contains **version-specific components for Creo 5–13**. It cannot prevent Creo crashes or guarantee recovery of every unsaved operation.
 
 [中文说明](README.zh-CN.md) · [Full V574 user guide (Chinese)](docs/USER_GUIDE.zh-CN.md)
