@@ -1,4 +1,4 @@
-# Creo 工作文件索引库 · V574
+# Creo 工作文件索引库 · V578
 
 <img src="app-icon.png" width="160" alt="CREO AI" />
 
@@ -18,17 +18,21 @@
 
 用于 Windows x64 的 Creo 模型卡片、保存节点、自动保存与出错保护工具。统一包包含 **Creo 5–13 九套版本对应组件**。它不能防止 Creo 崩溃，也不能保证恢复所有未保存操作。
 
-[English](README.md) · [V574 功能手册](docs/USER_GUIDE.zh-CN.md)
+[English](README.md) · [V578 功能手册](docs/USER_GUIDE.zh-CN.md)
 
 ## 下载与安装
 
-- [V574 中文版统一安装包](https://github.com/zewei2580-tech/creo-work-index/releases/download/v574/CreoWorkIndex_Unified_V574_Chinese.zip)
-- [SHA-256 校验文件](https://github.com/zewei2580-tech/creo-work-index/releases/download/v574/CreoWorkIndex_Unified_V574_Chinese.zip.sha256)
-- [发布说明](https://github.com/zewei2580-tech/creo-work-index/releases/tag/v574)
+- [V578 中文版统一安装包](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese.zip)
+- [SHA-256 校验文件](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese.zip.sha256)
+- [发布说明](https://github.com/zewei2580-tech/creo-work-index/releases/tag/v578)
 
 完整解压，保留 `shared` 和 `versions` 文件夹，运行最外层 **Setup.exe**。选择实际 Creo 版本、插件目录、索引库目录和启动配置。新安装使用不同的空程序目录与空索引库目录；已有安装选择“升级现有版本”，保留原路径和设置。安装前先保存工作并退出 Creo 和索引界面。
 
 九套 SDK 构建、安装升级及文件校验通过；**尚未在 Creo 5–13 中逐版完成全部真实 CAD 操作验收**，请先用测试模型确认。此仓库发布安装包与使用说明，不发布软件源码。
+
+## V578 恢复更新
+
+调整新会话恢复后的当前模型激活调度与就绪判断，处理模型显示后未进入可编辑状态、保护开关不可用的问题。悬浮入口右键新增 **重置并重新加载索引器**：收到 Creo 确认后清除待处理恢复请求、旧结果及界面等待状态，再重新加载索引界面，保留模型和节点。Creo 长时间运算时需等待其回到可处理状态。既有授权与作者工具继续兼容。协议及回归检查通过，恢复流程仍需实际模型复测。
 
 ## 模型卡片与节点
 
@@ -40,7 +44,7 @@
 
 ![V574 内嵌节点列表示例](docs/images/v574-nodes.png)
 
-V574 的节点列表嵌入卡片，减少原生下拉框短暂失焦时自动收起。选择或按 Esc 可收起；可滚动查看更多节点。改名后显示自定义名称。节点行的 **×** 将允许删除的手动节点移入回收站；自动节点、重要锁定节点和被使用或恢复依赖引用的节点受保护。顶部“回收站”支持卡片单选恢复、清空所选和清空全部。
+自 V574 起，节点列表嵌入卡片，减少原生下拉框短暂失焦时自动收起。选择或按 Esc 可收起；可滚动查看更多节点。改名后显示自定义名称。节点行的 **×** 将允许删除的手动节点移入回收站；自动节点、重要锁定节点和被使用或恢复依赖引用的节点受保护。顶部“回收站”支持卡片单选恢复、清空所选和清空全部。
 
 **整张卡片的“删除”与节点行 × 不同：按确认框处理整组本地备份，可能永久删除、不经回收站。请仔细核对范围。**
 
