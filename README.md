@@ -1,4 +1,4 @@
-# Creo Work Index · V574
+# Creo Work Index · V578
 
 <img src="app-icon.png" width="160" alt="CREO AI" />
 
@@ -18,15 +18,19 @@
 
 Model cards, saved nodes, per-file autosave and error protection for Windows x64. The unified installer contains **version-specific components for Creo 5–13**. It cannot prevent Creo crashes or guarantee recovery of every unsaved operation.
 
-[中文说明](README.zh-CN.md) · [Full V574 user guide (Chinese)](docs/USER_GUIDE.zh-CN.md)
+[中文说明](README.zh-CN.md) · [Full V578 user guide (Chinese)](docs/USER_GUIDE.zh-CN.md)
 
 ## Download and install
 
-[V574 unified Chinese installer](https://github.com/zewei2580-tech/creo-work-index/releases/download/v574/CreoWorkIndex_Unified_V574_Chinese.zip) · [SHA-256](https://github.com/zewei2580-tech/creo-work-index/releases/download/v574/CreoWorkIndex_Unified_V574_Chinese.zip.sha256) · [Release notes](https://github.com/zewei2580-tech/creo-work-index/releases/tag/v574)
+[V578 unified Chinese installer](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese.zip) · [SHA-256](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese.zip.sha256) · [Release notes](https://github.com/zewei2580-tech/creo-work-index/releases/tag/v578)
 
 Extract the complete archive, keep the shared and versions folders, and run the outer Setup.exe. Select your actual Creo version and startup configuration. New installations use separate empty program and library directories; existing installations use Upgrade and retain their settings. Save your work and exit Creo and the index interface first.
 
 All nine SDK builds and installation checks passed. Full live CAD acceptance has **not** been completed on every Creo version. Test with copies before production use. This repository distributes installers and documentation, not software source code.
+
+## V578 recovery updates
+
+This update revises current-model activation after recovery in a new Creo session and adds **重置并重新加载索引器** to the floating entry's right-click menu. Reset waits for Creo acknowledgement before clearing queued restore requests and UI wait state; it retains models and saved nodes. A blocked Creo computation must return before it can acknowledge reset. Existing author tools and licenses remain compatible. Protocol and regression checks passed; live recovery still needs model-specific retesting.
 
 ## Current model cards
 
@@ -37,7 +41,7 @@ These are actual V574 UI renders using isolated demonstration data. A fresh empt
 
 Selecting a node changes the preview only. Double-click the preview or use **CREO打开** to open a separate working copy. **本地文件** opens Windows Explorer at the node file; internal metadata remains visible and must not be removed manually.
 
-V574 embeds the list in the card to reduce unexpected closing during transient focus changes. It supports scrolling, selection and row deletion. **改名** updates the node label. Row **×** moves eligible manual nodes to the recycle bin; automatic, locked, in-use and recovery-dependent nodes are protected. The recycle bin supports selecting a card, restoring it or permanently clearing it.
+Since V574, the interface embeds the list in the card to reduce unexpected closing during transient focus changes. It supports scrolling, selection and row deletion. **改名** updates the node label. Row **×** moves eligible manual nodes to the recycle bin; automatic, locked, in-use and recovery-dependent nodes are protected. The recycle bin supports selecting a card, restoring it or permanently clearing it.
 
 The card-level **删除** action has a broader scope and may permanently delete the entire local backup record without the recycle bin. Read the confirmation carefully.
 
