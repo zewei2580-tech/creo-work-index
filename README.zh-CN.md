@@ -20,10 +20,13 @@
 
 [English](README.md) · [V578 功能手册](docs/USER_GUIDE.zh-CN.md)
 
+
+完整图文功能手册提供 [PDF 下载（48 页）](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_V578_Manual.pdf) 和 [离线网页版下载](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_V578_Manual.html)。推荐安装包已内置两种格式，完整解压后在 Setup.exe 同目录打开“索引库功能手册.pdf”或“索引库功能手册.html”。PDF 带目录、书签和配图；网页版支持全文搜索及图片放大。
+
 ## 下载与安装
 
-- [V578 中文版统一安装包](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese.zip)
-- [SHA-256 校验文件](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese.zip.sha256)
+- [V578 中文版统一安装包](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese_With_Manual_PDF.zip)
+- [SHA-256 校验文件](https://github.com/zewei2580-tech/creo-work-index/releases/download/v578/CreoWorkIndex_Unified_V578_Chinese_With_Manual_PDF.zip.sha256)
 - [发布说明](https://github.com/zewei2580-tech/creo-work-index/releases/tag/v578)
 
 完整解压，保留 `shared` 和 `versions` 文件夹，运行最外层 **Setup.exe**。选择实际 Creo 版本、插件目录、索引库目录和启动配置。新安装使用不同的空程序目录与空索引库目录；已有安装选择“升级现有版本”，保留原路径和设置。安装前先保存工作并退出 Creo 和索引界面。
